@@ -1,0 +1,13 @@
+{
+  "solana": {
+    "rpcUrl": "https://api.mainnet-beta.solana.com",
+    "devnetRpcUrl": "https://api.devnet.solana.com"
+  },
+  "telegram": {
+    "botToken": "YOUR_TELEGRAM_BOT_TOKEN"
+  },
+  "twitter": {
+    "apiKey": "YOUR_TWITTER_API_KEY"
+  },
+  "port": 3000
+}
