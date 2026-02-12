@@ -1,13 +1,5 @@
 {
-  "solana": {
-    "rpcUrl": "https://api.mainnet-beta.solana.com",
-    "devnetRpcUrl": "https://api.devnet.solana.com"
-  },
-  "telegram": {
-    "botToken": "YOUR_TELEGRAM_BOT_TOKEN"
-  },
-  "twitter": {
-    "apiKey": "YOUR_TWITTER_API_KEY"
-  },
-  "port": 3000
+  "apiKey": "b64eb5d4ee5d6222e3ec5eeab8ec907ae23cd5fde0f4563838a059240548784c",
+  "claimCode": "fcc9825f-776d-4b8b-89e8-cc47c6d7e523",
+  "verificationCode": "deck-8E62"
 }
