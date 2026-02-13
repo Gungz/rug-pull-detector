@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-const RugPullDetector = require('./rugPullDetector');
+const { RugPullDetector } = require('./rugPullDetector');
 
 class WebDashboard {
     constructor() {

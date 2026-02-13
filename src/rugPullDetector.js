@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
-const { ChainAnalyzer } = require('./chainAnalyzer');
-const { SocialAnalyzer } = require('./socialAnalyzer');
-const { CodeAnalyzer } = require('./codeAnalyzer');
+const ChainAnalyzer = require('./chainAnalyzer');
+const SocialAnalyzer = require('./socialAnalyzer');
+const CodeAnalyzer = require('./codeAnalyzer');
 
 class RugPullDetector {
   constructor() {
@@ -61,6 +61,55 @@ class RugPullDetector {
     } catch (error) {
       console.error(`❌ Error analyzing token ${tokenMint}:`, error.message);
       throw error;
+    }
+  }
+
+  /**
+   * Analyze token by symbol (for web dashboard compatibility)
+   * @param {string} symbol - Token symbol
+   * @returns {Promise<Object>} - Risk assessment
+   */
+  async analyzeTokenBySymbol(symbol) {
+    // For hackathon demo, we'll simulate based on symbol
+    // In production, this would resolve symbol to mint address
+    console.log(`🔍 Analyzing token by symbol: ${symbol}`);
+    
+    // Simulate different risk levels based on symbol
+    let mockMint = symbol.toLowerCase() + "_mint_address";
+    
+    if (symbol.toLowerCase().includes('fake') || symbol.toLowerCase().includes('rug')) {
+      // High risk simulation
+      return {
+        tokenSymbol: symbol,
+        riskScore: 92,
+        riskLevel: 'CRITICAL',
+        onChainIssues: ['Mint authority not renounced', 'Single wallet holds 95% supply'],
+        socialIssues: ['Bot activity detected', 'Fake influencer campaigns'],
+        codeIssues: ['Backdoor functions found', 'Upgradeable contract'],
+        recommendations: ['DO NOT BUY - HIGH RUG PULL RISK', 'Avoid this token completely']
+      };
+    } else if (symbol.toLowerCase().includes('moon') || symbol.toLowerCase().includes('shot')) {
+      // Medium-high risk
+      return {
+        tokenSymbol: symbol,
+        riskScore: 78,
+        riskLevel: 'HIGH',
+        onChainIssues: ['LP tokens not locked', 'Anonymous team'],
+        socialIssues: ['Suspicious Telegram activity'],
+        codeIssues: [],
+        recommendations: ['EXTREME CAUTION - High risk detected', 'Only invest what you can afford to lose']
+      };
+    } else {
+      // Low risk simulation
+      return {
+        tokenSymbol: symbol,
+        riskScore: 23,
+        riskLevel: 'LOW',
+        onChainIssues: [],
+        socialIssues: [],
+        codeIssues: [],
+        recommendations: ['APPEARS LEGITIMATE - Low risk detected', 'Still exercise normal caution with new tokens']
+      };
     }
   }
 

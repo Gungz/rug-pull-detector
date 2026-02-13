@@ -1,5 +1,5 @@
 const { Telegraf } = require('telegraf');
-const RugPullDetector = require('./rugPullDetector');
+const { RugPullDetector } = require('./rugPullDetector');
 
 class TelegramBot {
     constructor() {
