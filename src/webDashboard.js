@@ -3,9 +3,9 @@ const path = require('path');
 const { RugPullDetector } = require('./rugPullDetector');
 
 class WebDashboard {
-    constructor() {
+    constructor(detector = null) {
         this.app = express();
-        this.detector = new RugPullDetector();
+        this.detector = detector || new RugPullDetector();
         this.setupMiddleware();
         this.setupRoutes();
     }
